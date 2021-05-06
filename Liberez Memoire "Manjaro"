@@ -1,0 +1,9 @@
+
+## Voir les 10 app qui cinsomme le + de ressources .
+
+ps -eo rss,comm | sort -nrk 1 | head -n 10 | awk '{ printf "%s %0.2fGiB\n",$2,$1/1024/1024 }'
+
+
+## Solution Manjaro.
+
+plasmashell --replace & sudo swapoff -a && sudo swapon -a
